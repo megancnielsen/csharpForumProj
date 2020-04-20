@@ -1,0 +1,19 @@
+@model Post;
+
+<div class="container">
+    @* if accessing the values of dictionary keys -> use brackets instead of dot notation ( @Model["PostId"] vs @Model.PostId ) *@
+    <h1>Details for Post Id #@Model.PostId</h1>
+    <hr />
+
+    <h2><u>Author</u></h2>
+    <h5>@Model.Username</h5>
+    <hr />
+
+    <h2><u>Topic</u></h2>
+    <h5>@Model.Topic</h5>
+    <hr />
+
+    <h2><u>Post</u></h2>
+    <h5>@Model.Body</h5>
+    <hr />
+</div>

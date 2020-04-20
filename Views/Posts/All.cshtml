@@ -1,0 +1,27 @@
+@model List<Post>;
+
+<h2 class="text-center">All Posts</h2>
+
+@foreach (Post post in Model)
+{
+    <div class="card mx-auto text-center mb-3 w-50">
+        <div class="card-header">
+            <h5 class="card-title">
+                @post.Topic
+            </h5>
+        </div>
+
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">
+                @post.Username
+            </h6>
+            <p class="card-text">
+                @post.Body
+            </p>
+            <a asp-action="Details" asp-controller="Posts" asp-route-id="@post.PostId">Details</a>
+            <a class="text-warning" asp-action="Edit" asp-controller="Posts" asp-route-id="@post.PostId">Edit</a>
+            <a class="text-danger" href="/Posts/@post.PostId/Delete">Delete</a>
+            @* technically Delete should be a post request, not anchor tag *@
+        </div>
+    </div>
+}
